@@ -12,8 +12,15 @@
     <body>
         <h1>Login page</h1>
         <p>Welcome<br>Please Login</p>
-        <h3>Email</h3>
-        <h3>Password</h3>
+        <form action="successfulLogin.html">
+            <h3>Email</h3>
+            <label for="email"></label>
+            <input type="email" placeholder="Enter your email" id="email" name="email"><br><br>
+            <label for="pwd"></label>
+            <h3>Password</h3>
+            <input type="password"  placeholder="Enter your password" id="pwd" name="pwd" minlength="8"><br><br>
+            <input type="submit" >
+          </form>
         <center>
             <p>Don't have an account?<a href="register.html"> Register now</a> </p>
             <p><a href="forgottenPassword.html">Forgot your Password?</a></p>
