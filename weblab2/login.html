@@ -10,20 +10,20 @@
     </head>
     </center> 
     <body>
+        <div style="margin: 20px auto; width: 300px; text-align: left;">
         <h1>Login page</h1>
         <p>Welcome<br>Please Login</p>
         <form action="successfulLogin.html">
-            <h3>Email</h3>
-            <label for="email"></label>
-            <input type="email" placeholder="Enter your email" id="email" name="email"><br><br>
-            <label for="pwd"></label>
-            <h3>Password</h3>
+            <label for="email"><b>Email</b></label><br>
+            <input type="email" placeholder="Enter your email" id="email" name="email"><br>
+            <label for="pwd"><b>Password</b></label><br>
             <input type="password"  placeholder="Enter your password" id="pwd" name="pwd" minlength="8"><br><br>
-            <input type="submit" >
+            <center>
+                <p>Don't have an account?<a href="register.html"> Register now</a> </p>
+                <p><a href="forgottenPassword.html">Forgot your Password?</a></p>
+            </center>
+            <input type="submit" value="SUBMIT" style="width: 100%; padding: 10px; background-color: white; color: black; border: 1px solid black; cursor: pointer; margin-top: 10px;">
+        </div>
           </form>
-        <center>
-            <p>Don't have an account?<a href="register.html"> Register now</a> </p>
-            <p><a href="forgottenPassword.html">Forgot your Password?</a></p>
-        </center>
 </body>
 </html>
