@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.first-section{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F6C1A4;
+    align-items: center;
+}
+
+.sub-section{
+    padding-left: 50px;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 64px;
+    color:#000000;
+    padding-top: 100px;
+}
+
+.second-section{
+    margin-top: 40px;
+    padding-left: 50px;
+}
+
+.second-section p{
+    font-size: 18px;
+}
+
+.beginning{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+.third-section{
+    display: flex;
+    background-color: #F5F5EB;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top:20px;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 40px;
+    object-fit: contain;
+}
+
+.first-one{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: auto;
+}
+
+.first-one p{
+    margin-top: 10px;
+}
+
+.second-one{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: auto;
+}
+
+.second-one p{
+    margin-top: 10px;
+}
+.third-one{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: auto;
+}
+
+.third-one p{
+    margin-top: 10px;
+}
+
+.third-section img {
+    height: 100%;
+    width: 100%;
+}
+.forth-section{
+    margin-top: auto;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+.fourth-section p{
+    font-size: 18px;
+}
+
+.sincerely{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #F6C1A4;
+    margin-top: 10px;
+    font-size: 20px;
+}
