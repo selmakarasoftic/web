@@ -3,31 +3,21 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FFACAC;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-h1{
+
+h1 {
     color: #880000;
+    margin-top: 20px;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-
-.centered-content {
-    text-align: center;
-    max-width: 80%;
-    width: 100%;
-}
-
-header,body,footer {
-    max-width: 600px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: lightcoral;
+    min-height: 80vh;
 }
 
 img.center {
@@ -35,16 +25,13 @@ img.center {
     margin: 0 auto;
     max-width: 100%;
     height: auto;
+    box-shadow: 0px 0px 20px rgba(113, 0, 0, 0.841);
 }
 
-p {
+body p {
     color: darkred;
     font-size: medium;
     margin-top: 10px;
-}
-
-form {
-    margin-top: 20px;
 }
 
 input[type="submit"] {
@@ -52,9 +39,7 @@ input[type="submit"] {
     padding: 10px;
     background-color: darkred;
     color: #FFACAC;
-    border: none;
     margin-top: 10px;
-    cursor: pointer;
     border-radius: 5px;
 }
 
@@ -64,11 +49,12 @@ input[type="submit"]:hover {
 
 footer {
     background-color: darkred;
-    color:lightcoral;
+    color: lightcoral;
     padding: 10px;
     border-radius: 10px;
     margin-top: 20px;
-    color: #FFACAC;
+    align-items: center;
+    justify-content: center;
 }
 
 footer a {
