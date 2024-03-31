@@ -1,0 +1,31 @@
+body {
+    background-image: url('https://as2.ftcdn.net/v2/jpg/05/06/20/13/1000_F_506201358_3AxMTSbWHoT1H5qwWYJgppSgRVeiU6Jp.jpg');
+    background-size: cover;
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.container-fluid {
+    padding-top: 50px;
+}
+
+body::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+body, input, textarea, button {
+    color: white;
+}
+
+.form-control {
+    background-color: #ADD8E6; 
+    color: white;
+    font-weight: bold;
+}
