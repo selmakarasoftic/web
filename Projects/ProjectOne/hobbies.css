@@ -1,0 +1,75 @@
+body {
+    background-image: url('https://img.freepik.com/premium-photo/abstract-dark-red-elegant-painting-texture-background-vintage-grunge-dark-backdrop-aesthetic-creative-design_364465-1607.jpg?w=360');
+    background-size: cover;
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header h1 {
+    color: white;
+}
+body a {
+    text-decoration: none;
+    color: red; 
+    transition: color 0.3s ease; 
+}
+
+body a:hover {
+    color: darkred; 
+}
+
+.hobby {
+    margin-bottom: 20px;
+}
+
+.hobby img {
+    display: block;
+    margin: 0 auto; 
+    width: 50%; 
+    max-width: 360px; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.hobby h2 {
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hobby p {
+    color: #666;
+    text-align: justify;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(82, 4, 4, 0.712); 
+}
+
+.footer-btn {
+    text-align: center;
+}
+
+.footer-btn a {
+    text-decoration: none;
+    color: white;
+}
+
