@@ -1,0 +1,50 @@
+
+
+body {
+    background-image: url('https://w0.peakpx.com/wallpaper/904/626/HD-wallpaper-noche-oscura-lights-night-thumbnail.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgba(245, 245, 245, 0.719);
+}
+
+header, footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.about-me {
+    margin: 0 auto;
+}
+
+.about-me img {
+    max-width: 50%;
+    max-height: auto;
+    margin: 5px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+body h2{
+    text-align: center;
+}
+
+footer, body a{
+    color: white;
+    text-decoration: none;
+}
+
+.modal-dialog {
+    color: black;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: darkred;
+}
+
