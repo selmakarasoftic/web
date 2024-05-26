@@ -12,64 +12,54 @@
     <div class="container">
         <header>
             <h1>Look at what we have!</h1>
+            <div class="theme-switcher">
+                <button id="light-theme-btn">Light Theme</button>
+                <button id="dark-theme-btn">Dark Theme</button>
+            </div>
         </header>
-        <div class="toggle-section">
-            <button class="toggle-button" data-target="gallery">Toggle Gallery</button>
-            <div id="gallery" class="gallery">
-                <div class="house">
-                    <img src="assets/img/house1.jpeg" alt="House 1" class="thumbnail" data-image="assets/img/house1.jpeg">
-                    <p>Family house in Sarajevo</p>
-                </div>
-                <div class="house">
-                    <img src="assets/img/house2.jpg" alt="House 2" class="thumbnail" data-image="assets/img/house2.jpg">
-                    <p>Flat house in Dobrinja</p>
-                </div>
-                <div class="house">
-                    <img src="assets/img/house3.jpeg" alt="House 3" class="thumbnail" data-image="assets/img/house3.jpeg">
-                    <p>Perfect house for a married couple</p>
-                </div>
+        <div id="gallery" class="gallery">
+            <div class="house">
+                <img src="assets/img/house1.jpeg" alt="House 1" class="thumbnail" data-image="assets/img/house1.jpeg">
+                <p>Family house in Sarajevo</p>
+            </div>
+            <div class="house">
+                <img src="assets/img/house2.jpg" alt="House 2" class="thumbnail" data-image="assets/img/house2.jpg">
+                <p>Flat house in Dobrinja</p>
+            </div>
+            <div class="house">
+                <img src="assets/img/house3.jpeg" alt="House 3" class="thumbnail" data-image="assets/img/house3.jpeg">
+                <p>Perfect house for a married couple</p>
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modal-img">
+                <div id="caption"></div>
             </div>
         </div>
         <div class="toggle-section">
-            <button class="toggle-button" data-target="details">See the house details, FAQ and information about us</button>
-            <div id="details" class="details hidden">
-                <h2>Details list</h2>
-                <div class="toggle-section">
-                    <button class="detail-button">Family house in Sarajevo</button>
-                    <div class="detail-content hidden">
-                        <p>Square Meters: 100</p>
-                        <p>Number of Rooms: 5</p>
-                    </div><br><br>
-                    <button class="detail-button">Flat house in Dobrinja</button>
-                    <div class="detail-content hidden">
-                        <p>Square Meters: 70</p>
-                        <p>Number of Rooms: 3</p>
-                    </div><br><br>
-                    <button class="detail-button">Perfect house for a married couple</button>
-                    <div class="detail-content hidden">
-                        <p>Square Meters: 80</p>
-                        <p>Number of Rooms: 3</p>
+            <div class="accordion">
+                <button class="accordion-button">FAQs</button>
+                <div class="accordion-content">
+                    <div class="accordion-item">
+                        <h3 class="accordion-question">Q: What types of houses do you offer?</h3>
+                        <p class="accordion-answer">A: We offer a wide range of houses including family houses, flats, and houses suitable for couples.</p>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-question">Q: Are the houses furnished?</h3>
+                        <p class="accordion-answer">A: The furnishing options vary for each house. Please contact us for more details.</p>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-question">Q: Do you provide financing options?</h3>
+                        <p class="accordion-answer">A: Yes, we offer financing options for qualified buyers. Contact us to learn more.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="toggle-button" data-target="comments">Toggle Comments</button>
-        <div id="comments" class="comments hidden">
-            <h2>Leave a Comment</h2>
-            <form id="commentForm">
-                <input type="text" id="commentName" placeholder="Your Name">
-                <textarea id="commentText" placeholder="Write your comment here..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="commentsSection"></div>
-        </div>
     </div>
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/scripts.js"></script>
+
 </body>
 
 </html>
