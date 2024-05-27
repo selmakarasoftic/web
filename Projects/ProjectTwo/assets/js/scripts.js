@@ -10,10 +10,7 @@ $(document).ready(function () {
     $('.close').click(function () {
         $('#myModal').css('display', 'none');
     });
-});
 
-
-$(document).ready(function () {
     $('#light-theme-btn').click(function () {
         $('body').removeClass('dark-theme').addClass('light-theme');
     });
@@ -22,13 +19,15 @@ $(document).ready(function () {
         $('body').removeClass('light-theme').addClass('dark-theme');
     });
 
-    $('.accordion-button').click(function () {
+    $('.accordion-question').click(function () {
+        var answer = $(this).next('.accordion-answer');
+        answer.slideToggle(300);
         $(this).toggleClass('active');
+    });
+
+    $('.accordion-button').click(function () {
         var content = $(this).next('.accordion-content');
-        if (content.css('display') === 'block') {
-            content.css('display', 'none');
-        } else {
-            content.css('display', 'block');
-        }
+        content.slideToggle(300);
+        $(this).toggleClass('active');
     });
 });

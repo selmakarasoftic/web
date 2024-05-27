@@ -17,45 +17,35 @@ header {
   margin-bottom: 20px;
 }
 
+.theme-switcher button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 .toggle-section {
   margin-bottom: 20px;
-}
-
-.toggle-button {
-  display: block;
-  margin-bottom: 10px;
-  padding: 10px;
-  background: brown;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.toggle-button:hover {
-  background: #0056b3;
-}
-
-.hidden {
-  display: none;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
-.image {
-  flex: 0 0 100%; 
+.house {
+  flex: 1 1 calc(33.333% - 10px);
+  box-sizing: border-box;
 }
 
-.image img {
+.house img {
   width: 100%;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s;
 }
 
-.image img:hover {
+.house img:hover {
   transform: scale(1.1);
 }
 
@@ -133,12 +123,27 @@ header {
 }
 
 .accordion-content {
-  display: none;
   padding: 10px;
   border: 1px solid #007bff;
   margin-top: 5px;
 }
 
-.active {
-  display: block;
+.accordion-item {
+  margin-top: 10px;
+}
+
+.accordion-answer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .house {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .house {
+    flex: 1 1 100%;
+  }
 }
