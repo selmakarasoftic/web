@@ -147,3 +147,38 @@ header {
     flex: 1 1 100%;
   }
 }
+
+
+.contact-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#password-strength {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.comments {
+  margin-bottom: 10px;
+}
