@@ -78,26 +78,46 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
-            alert('Form submitted successfully!');
-            form.submit();
+            var formData = $(form).serializeArray();
+            var dataToStore = {};
+            formData.forEach(function(item) {
+                dataToStore[item.name] = item.value;
+            });
+
+            var dataToStoreText = JSON.stringify(dataToStore);
+
+            localStorage.setItem('C:/xampp/htdocs/web/Projects/ProjectTwo/assets/data/', dataToStoreText);
+
+            $('#form-message').html('<p>Form submitted successfully!</p>');
         }
     });
+
+    /*to see the data below
+    var storedFormDataText = localStorage.getItem('C:/xampp/htdocs/web/Projects/ProjectTwo/assets/data/');
+    if (storedFormDataText) {
+        var storedFormData = JSON.parse(storedFormDataText);
+        var message = 'Stored Form Data:<br>';
+        for (var key in storedFormData) {
+            message += key + ': ' + storedFormData[key] + '<br>';
+        }
+        $('#form-message').html('<p>' + message + '</p>');
+    }*/
+
 
     $.ajax({
         url: 'assets/data/comments.json',
         method: 'GET',
         dataType: 'json',
-        success: function(comments) {
-            console.log(comments)
+        success: function (comments) {
             var comments_list = $('#comments');
-            comments.userComments.forEach(function(comment) {
+            comments.userComments.forEach(function (comment) {
                 var commentElement = `<div class="userComments">
                     <p><strong>${comment.username}</strong>: ${comment.message}</p>
                 </div>`;
                 comments_list.append(commentElement);
             });
         },
-        error: function(error) {
+        error: function (error) {
             console.error(error);
         }
     });
