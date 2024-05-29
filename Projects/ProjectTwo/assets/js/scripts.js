@@ -86,18 +86,19 @@ $(document).ready(function () {
     $.ajax({
         url: 'assets/data/comments.json',
         method: 'GET',
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function(comments) {
+            console.log(comments)
             var comments_list = $('#comments');
-            comments.forEach(function(comment) {
+            comments.userComments.forEach(function(comment) {
                 var commentElement = `<div class="userComments">
                     <p><strong>${comment.username}</strong>: ${comment.message}</p>
                 </div>`;
                 comments_list.append(commentElement);
             });
         },
-        error: function() {
-            console.error('Failed to load content data.');
+        error: function(error) {
+            console.error(error);
         }
     });
 });
