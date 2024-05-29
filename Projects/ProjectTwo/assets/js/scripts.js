@@ -72,21 +72,21 @@ $(document).ready(function () {
                 required: "Please enter your email address",
                 email: "Please enter a valid email address"
             },
-            date: {
-                required: "Please select a preferred contact date",
-                date: "Please enter a valid date"
-            },
             password: {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 8 characters long"
             }
         },
+        submitHandler: function (form) {
+            alert('Form submitted successfully!');
+            form.submit();
+        }
     });
 
     $.ajax({
         url: 'assets/data/comments.json',
         method: 'GET',
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(comments) {
             var comments_list = $('#comments');
             comments.forEach(function(comment) {
