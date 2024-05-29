@@ -84,22 +84,14 @@ $(document).ready(function () {
                 dataToStore[item.name] = item.value;
             });
             var dataToStoreText = JSON.stringify(dataToStore);
-            localStorage.setItem('C:/xampp/htdocs/web/Projects/ProjectTwo/assets/data/', dataToStoreText);
-            $('#form-message').html('<p>Form submitted successfully!</p>');
+           localStorage.setItem('sent.txt', dataToStoreText);
+
+           toastr.success('Form submitted successfully!');
+
+           $(form)[0].reset();
+           $('#password-strength').text('');
         }
     });
-
-    /*to see the data below
-    var storedFormDataText = localStorage.getItem('C:/xampp/htdocs/web/Projects/ProjectTwo/assets/data/');
-    if (storedFormDataText) {
-        var storedFormData = JSON.parse(storedFormDataText);
-        var message = 'Stored Form Data:<br>';
-        for (var key in storedFormData) {
-            message += key + ': ' + storedFormData[key] + '<br>';
-        }
-        $('#form-message').html('<p>' + message + '</p>');
-    }*/
-
 
     $.ajax({
         url: 'assets/data/comments.json',
