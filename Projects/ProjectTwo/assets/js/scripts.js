@@ -83,11 +83,8 @@ $(document).ready(function () {
             formData.forEach(function(item) {
                 dataToStore[item.name] = item.value;
             });
-
             var dataToStoreText = JSON.stringify(dataToStore);
-
             localStorage.setItem('C:/xampp/htdocs/web/Projects/ProjectTwo/assets/data/', dataToStoreText);
-
             $('#form-message').html('<p>Form submitted successfully!</p>');
         }
     });
