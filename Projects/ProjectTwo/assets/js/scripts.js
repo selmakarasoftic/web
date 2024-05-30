@@ -88,8 +88,8 @@ $(document).ready(function () {
 
            toastr.success('Form submitted successfully!');
 
-           $(form)[0].reset();
-           $('#password-strength').text('');
+             $(form)[0].reset();
+             $('#password-strength').text('');
         }
     });
 
@@ -110,4 +110,10 @@ $(document).ready(function () {
             console.error(error);
         }
     });
+
+    $('.view-more').click(function () {
+        var houseId = $(this).attr('data-id');
+        window.location.href = 'viewMore.html?id=' + houseId;
+    });
+    
 });
