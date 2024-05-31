@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.thumbnail').click(function () {
+    $(document).on('click', '.thumbnail', function () {
         var imgSrc = $(this).attr('data-image');
         var captionText = $(this).siblings('p').text();
         $('#myModal').css('display', 'block');
@@ -7,113 +7,121 @@ $(document).ready(function () {
         $('#caption').text(captionText);
     });
 
-    $('.close').click(function () {
+    $(document).on('click', '.close', function () {
         $('#myModal').css('display', 'none');
     });
 
-    $('#light-theme-btn').click(function () {
+    $(document).on('click', '#light-theme-btn', function () {
         $('body').removeClass('dark-theme').addClass('light-theme');
     });
 
-    $('#dark-theme-btn').click(function () {
+    $(document).on('click', '#dark-theme-btn', function () {
         $('body').removeClass('light-theme').addClass('dark-theme');
     });
 
-    $('.accordion-question').click(function () {
+    $(document).on('click', '.accordion-question', function () {
         var answer = $(this).next('.accordion-answer');
         answer.slideToggle(300);
         $(this).toggleClass('active');
     });
 
-    $('.accordion-button').click(function () {
+    $(document).on('click', '.accordion-button', function () {
         var content = $(this).next('.accordion-content');
         content.slideToggle(300);
         $(this).toggleClass('active');
     });
 
-    $('#password').on('input', function () {
+    $(document).on('input', '#password', function () {
         var password = $(this).val();
         var strength = getPasswordStrength(password);
-        $('#password-strength').text('Strength: ' + strength);
+        if (strength !== undefined) $('#password-strength').text('Strength: ' + strength);
+        else $('#password-strength').text('');
     });
 
     function getPasswordStrength(password) {
-        var strength = 'Weak';
         if (password.length >= 8) {
-            strength = 'Medium';
-            if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#\$%\^&\*]/.test(password)) {
-                strength = 'Strong';
+            var symbols = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            var numbers = /\d/;
+            var strength = 'Weak';
+            if (numbers.test(password)) {
+                strength = 'Medium';
+                if (symbols.test(password)) {
+                    strength = 'Strong';
+                }
             }
+            return strength;
         }
-        return strength;
     }
 
-    $('#contact-form').validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
+    $.when($('#contact-form')).then(() => {
+        $('#contact-form').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8
+                }
             },
-            email: {
-                required: true,
-                email: true
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Must consist of at least 2 characters"
+                },
+                email: {
+                    required: "Please enter your email address",
+                    email: "Please enter a valid email address"
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 8 characters long"
+                }
             },
-            password: {
-                required: true,
-                minlength: 8
-            }
-        },
-        messages: {
-            name: {
-                required: "Please enter your name",
-                minlength: "Must consist of at least 2 characters"
-            },
-            email: {
-                required: "Please enter your email address",
-                email: "Please enter a valid email address"
-            },
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 8 characters long"
-            }
-        },
-        submitHandler: function (form) {
-            var formData = $(form).serializeArray();
-            var dataToStore = {};
-            formData.forEach(function(item) {
-                dataToStore[item.name] = item.value;
-            });
-            var dataToStoreText = JSON.stringify(dataToStore);
-           localStorage.setItem('sent.txt', dataToStoreText);
+            submitHandler: function (form) {
+                var formData = $(form).serializeArray();
+                formData.forEach(function (item) {
+                    localStorage.setItem(item.name, item.value);
+                });
+                toastr.success('Form submitted successfully!');
 
-           toastr.success('Form submitted successfully!');
-
-             $(form)[0].reset();
-             $('#password-strength').text('');
-        }
+                $(form)[0].reset();
+                $('#password-strength').text('');
+            }
+        });
     });
 
-    $.ajax({
-        url: 'assets/data/comments.json',
-        method: 'GET',
-        dataType: 'json',
-        success: function (comments) {
-            var comments_list = $('#comments');
-            comments.userComments.forEach(function (comment) {
-                var commentElement = `<div class="userComments">
-                    <p><strong>${comment.username}</strong>: ${comment.message}</p>
-                </div>`;
-                comments_list.append(commentElement);
-            });
-        },
-        error: function (error) {
-            console.error(error);
-        }
-    });
 
-    $('.view-more').click(function () {
+
+    $(document).on('click', '.view-more', function () {
         var houseId = $(this).attr('data-id');
-        window.location.href = 'viewMore.html?id=' + houseId;
+        window.location.href = '?id=' + houseId + '';
     });
-    
+
+    $.when($('#comments')).then(() => {
+        $.ajax({
+            url: 'assets/data/comments.json',
+            method: 'GET',
+            dataType: 'json',
+            success: function (comments) {
+                var comments_list = $('#comments');
+                comments.userComments.forEach(function (comment) {
+                    var commentElement = `<div class="userComments">
+                <p><strong>${comment.username}</strong>: ${comment.message}</p>
+            </div>`;
+                    comments_list.append(commentElement);
+                });
+            },
+            error: function (error) {
+                console.error(error);
+            }
+
+        });
+    });
+
 });

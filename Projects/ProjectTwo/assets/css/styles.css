@@ -1,15 +1,48 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: rgb(245, 238, 220);
-  color: brown;
+  line-height: 1.5;
+  font-family: sans-serif;
 }
+
+nav {
+  height: 50px;
+  line-height: 50px;
+  background: #00acc1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+nav ul li {
+  display: block;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main#spapp>section {
+  padding: 60px 10px 10px 10px;
+}
+
 
 .container {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -97,13 +130,13 @@ header {
 }
 
 .light-theme {
-  background-color: rgb(161, 136, 92);
+  background-color: white;
   color: #333;
 }
 
 .dark-theme {
   background-color: #333;
-  color: brown;
+  color: white;
 }
 
 .accordion-button {
@@ -153,7 +186,6 @@ header {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ccc;
-  background: #f9f9f9;
 }
 
 .contact-form h2 {
@@ -199,13 +231,13 @@ header {
 }
 
 .toast-success {
-  background-color: #5cb85c; 
-  color: #fff; 
+  background-color: #5cb85c;
+  color: #fff;
 }
 
 .toast-error {
-  background-color: #d9534f; 
-  color: #fff; 
+  background-color: #d9534f;
+  color: #fff;
 }
 
 .toast.show {
