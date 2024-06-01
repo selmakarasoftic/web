@@ -252,3 +252,11 @@ header {
   margin: 0 auto;
   display: block;
 }
+.vremenska{
+  padding: 5rem;
+}
+#weatherData {
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+}

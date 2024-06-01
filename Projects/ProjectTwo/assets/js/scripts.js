@@ -1,3 +1,12 @@
+var waitForEl = function (selector, callback) {
+    if (jQuery(selector).length) {
+        callback();
+    } else {
+        setTimeout(function () {
+            waitForEl(selector, callback);
+        }, 100);
+    }
+};
 $(document).ready(function () {
     $(document).on('click', '.thumbnail', function () {
         var imgSrc = $(this).attr('data-image');
@@ -53,7 +62,7 @@ $(document).ready(function () {
         }
     }
 
-    $.when($('#contact-form')).then(() => {
+    waitForEl('#contact-form', function () {
         $('#contact-form').validate({
             rules: {
                 name: {
@@ -83,24 +92,31 @@ $(document).ready(function () {
                     minlength: "Your password must be at least 8 characters long"
                 }
             },
-            submitHandler: function (form) {
-                var formData = $(form).serializeArray();
-                formData.forEach(function (item) {
-                    localStorage.setItem(item.name, item.value);
-                });
-                toastr.success('Form submitted successfully!');
-
-                $(form)[0].reset();
-                $('#password-strength').text('');
-            }
         });
     });
+
+
+    $(document).on('submit', '#contact-form', function (e) {
+        e.preventDefault();
+        var name = this.name.value;
+        var email = this.email.value;
+        var password = this.password.value;
+        localStorage.setItem("name", JSON.stringify(name));
+        localStorage.setItem("email", JSON.stringify(email));
+        localStorage.setItem("password", JSON.stringify(password));
+
+        toastr.success('Form submitted successfully!');
+
+        this.reset();
+        $('#password-strength').text('');
+    });
+
 
 
 
     $(document).on('click', '.view-more', function () {
         var houseId = $(this).attr('data-id');
-        window.location.href = '?id=' + houseId + '';
+        window.location.href = '?id=' + houseId + '#viewMore';
     });
 
     $.when($('#comments')).then(() => {
