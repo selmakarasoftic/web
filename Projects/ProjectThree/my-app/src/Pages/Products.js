@@ -2,23 +2,27 @@ import React from 'react';
 import { Grid, Container, Typography } from '@mui/material';
 import ProductCard from '../Components/ProductCard';
 
-// Sample product data
 const products = [
   {
-    name: 'Product 1',
-    description: 'This is a description of product 1.',
-    image: 'https://via.placeholder.com/150',
+    name: 'Coffee',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7VMU_XIfPdL971fwHkoCc9KinhvVpPJPkeg&s',
+    description: 'Coffee helped this project',
   },
   {
-    name: 'Product 2',
-    description: 'This is a description of product 2.',
-    image: 'https://via.placeholder.com/150',
+    name: 'Spotify',
+    image: 'https://store-images.s-microsoft.com/image/apps.10546.13571498826857201.6603a5e2-631f-4f29-9b08-f96589723808.dc893fe0-ecbc-4846-9ac6-b13886604095?h=464',
+    description: 'Spotify provided music.',
   },
   {
-    name: 'Product 3',
-    description: 'This is a description of product 3.',
-    image: 'https://via.placeholder.com/150',
+    name: 'YouTube',
+    description: 'Youtube helped by providig various videos.',
+    image: 'https://exchange4media.gumlet.io/news-photo/112901-109829-108730-youtube.jpg?w=400&dpr=2.6',
   },
+  {
+    name: 'Google',
+    image: 'https://yt3.googleusercontent.com/viNp17XpEF-AwWwOZSj_TvgobO1CGmUUgcTtQoAG40YaYctYMoUqaRup0rTxxxfQvWw3MvhXesw=s900-c-k-c0x00ffffff-no-rj',
+    description: 'Google helped finding the materials.',
+  }
 ];
 
 const Products = () => {

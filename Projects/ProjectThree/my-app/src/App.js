@@ -8,19 +8,20 @@ import Products from './Pages/Products';
 import Contact from "./Pages/Contact";
 import { Container, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import PetiPage from './Pages/PetiPage';
 
 
 function App() {
   return (
     <Router>
-      <Navbar /> 
+      <Navbar />
       <div className="container">
         <Routes>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Products" element={<Products/>} />
+          <Route path="/Products" element={<Products />} />
           <Route path="/AboutUs" element={<AboutUs />} />
-                   
+          <Route path="/PetiPage" element={<PetiPage />} />
         </Routes>
       </div>
     </Router>

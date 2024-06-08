@@ -43,7 +43,7 @@ function AboutUs() {
     <Box sx={{ mt: 3 }}>
       <Typography variant="h3" gutterBottom>{info.title}</Typography>
       <Typography variant="body1" paragraph>{info.description}</Typography>
-      
+
       <Typography variant="h4" gutterBottom>
         Us
       </Typography>
@@ -72,7 +72,7 @@ function AboutUs() {
           </Grid>
         ))}
       </Grid>
-      
+
       <Box mt={4}>
         <Typography variant="h4" gutterBottom>
           Our Mission

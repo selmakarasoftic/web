@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <Box sx={{ mt: 3 }}>
-       <Typography variant="h2" gutterBottom>Home</Typography>
+      <Typography variant="h2" gutterBottom>Home</Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="body1">Content Block 1</Typography>

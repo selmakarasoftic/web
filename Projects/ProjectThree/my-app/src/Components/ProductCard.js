@@ -2,12 +2,16 @@ import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
 
 const ProductCard = ({ product }) => {
+  const handleButtonClick = () => {
+    window.location.href = `https://en.wikipedia.org/wiki/${product.name}`;
+  };
+
   return (
     <Card>
       <CardMedia
         component="img"
         alt={product.name}
-        height="140"
+        height="auto"
         image={product.image}
       />
       <CardContent>
@@ -19,11 +23,8 @@ const ProductCard = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-        <Button size="small" color="secondary">
-          Buy Now
+        <Button size="small" color="primary" onClick={handleButtonClick}>
+          More
         </Button>
       </CardActions>
     </Card>

@@ -34,6 +34,12 @@ function ContactForm() {
     e.preventDefault();
     if (validate()) {
       console.log(formData);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setErrors({});
     }
   };
 
@@ -76,7 +82,7 @@ function ContactForm() {
         Submit
       </Button>
     </Box>
-  ); 
+  );
 }
 
 export default ContactForm;
