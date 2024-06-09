@@ -15,7 +15,7 @@ const products = [
   },
   {
     name: 'YouTube',
-    description: 'Youtube helped by providig various videos.',
+    description: 'Youtube helped by providing various videos.',
     image: 'https://exchange4media.gumlet.io/news-photo/112901-109829-108730-youtube.jpg?w=400&dpr=2.6',
   },
   {
