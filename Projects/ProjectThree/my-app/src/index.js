@@ -1,19 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./index.css";
-import { ThemeProvider } from "@emotion/react";
-import theme from "./theme";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import App from './App';
+import theme from './theme';
 
-
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(rootElement);
-
-
-root.render(
-  <ThemeProvider theme={theme}>
-    <React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <App />
-    </React.StrictMode>
-  </ThemeProvider>
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

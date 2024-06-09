@@ -10,7 +10,7 @@ const Home = () => {
             <CardMedia
               component="img"
               alt="Person's Photo"
-              height="400"
+              height="auto"
               image="https://cdn4.sharechat.com/cutecartoongirlsphoto_3381dd44_1654487402174_sc_cmprsd_75.jpg?tenant=sc&referrer=pwa-sharechat-service&f=rsd_75.jpg"
               title="Person's Photo"
             />
