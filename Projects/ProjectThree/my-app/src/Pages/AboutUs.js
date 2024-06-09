@@ -40,7 +40,8 @@ function AboutUs() {
   }, []);
 
   return (
-    <Box sx={{ mt: 3 }}>
+    
+    <Box sx={{ mt: 3, textAlign: 'center' }}>
       <Typography variant="h3" gutterBottom>{info.title}</Typography>
       <Typography variant="body1" paragraph>{info.description}</Typography>
 
