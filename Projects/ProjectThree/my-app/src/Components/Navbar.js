@@ -23,8 +23,8 @@ function Navbar() {
         <Button color="inherit" component={Link} to="/AboutUs">
           About Us!
         </Button>
-        <Button color="inherit" component={Link} to="/PetiPage">
-          PetiPage
+        <Button color="inherit" component={Link} to="/Info">
+          Info
         </Button>
       </Toolbar>
     </AppBar>

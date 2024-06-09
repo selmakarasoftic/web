@@ -8,7 +8,7 @@ import Products from './Pages/Products';
 import Contact from "./Pages/Contact";
 import { Container, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import PetiPage from './Pages/PetiPage';
+import Info from './Pages/Info';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/PetiPage" element={<PetiPage />} />
+          <Route path="/Info" element={<Info />} />
         </Routes>
       </div>
     </Router>
