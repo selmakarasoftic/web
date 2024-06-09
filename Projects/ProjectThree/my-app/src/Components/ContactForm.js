@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Button, Box, Typography, Alert } from "@mui/material";
 import "./ContactForm.css";
 
 function ContactForm() {
@@ -10,6 +10,7 @@ function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,6 +18,7 @@ function ContactForm() {
       ...formData,
       [name]: value,
     });
+    setSuccessMessage(""); 
   };
 
   const validate = () => {
@@ -40,12 +42,23 @@ function ContactForm() {
         message: "",
       });
       setErrors({});
+      setSuccessMessage("Thank you! Your message has been successfully submitted.");
+      setTimeout(() => {
+        setSuccessMessage(""); 
+      }, 3000);
     }
   };
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
-      <Typography variant="h5">Contact Us</Typography>
+      <Typography variant="h5" gutterBottom>
+        Contact Us
+      </Typography>
+      {successMessage && (
+        <Alert severity="success" sx={{ mb: 2 }}>
+          {successMessage}
+        </Alert>
+      )}
       <TextField
         fullWidth
         label="Name"
